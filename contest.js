@@ -37,7 +37,6 @@ function traditionalColorReadingQiuz() {
   quiz.style.backgroundColor = question.カラーコード;
   quizArea.appendChild(quiz);
 
-
   /*****　制限時間エリア　*****/
   const timer = document.createElement('span');
   timer.id = 'remaining-time';
@@ -112,13 +111,12 @@ function traditionalColorReadingQiuz() {
     if (userAnswer === question.読み仮名) {
       clearInterval(checkTime);
       commentArea.innerHTML = `<center>正解！</center><br>${question.由来}`
+      startButton.disabled = false;　　　//終了したら挑戦ボタンが押せるようにする
     }
     else {
       commentArea.innerHTML = '<center>不正解！<br>もう一度入力し直してください</center>'
-
     }
     answerArea.appendChild(commentArea);
-    startButton.disabled = false;　　　//終了したら挑戦ボタンが押せるようにする
   };
   startTimer(15);　　　　　　　　　　　　　//制限時間をセットして関数を読み込む
 };
@@ -155,5 +153,4 @@ const colors = [
   { 漢字: "浅黄", 読み仮名: "うすき", カラーコード: "#FAD689", 由来: "苅安草と灰汁で浅く染めたうすい黄色のことで、『延喜式』にも記された古い色名。古い呼び名は「あさき」で、浅い藍色の浅葱色（あさぎいろ）と混同された。平安後期の歴史物語『今鏡』にも「あさぎと日記に侍はべなるをば『青き色か、黄なる色か』などおぼつかなてく、」と書かれおり、混同を避けるために「うすき」の読みが定着した。" },
   { 漢字: "胡粉", 読み仮名: "ごふん", カラーコード: "#FFFFFB", 由来: "日本画にも使われる白色顔料の「胡粉」の色をさし、ごくわずかに黄みがかった白色のこと。胡粉はイタボガキなどの貝殻を焼いて粉末状にしたもので、下塗りとして発色を良くしたり、他の絵具と混ぜあわせて色調を出すのにも用いられた。" },
   { 漢字: "瑠璃", 読み仮名: "るり", カラーコード: "#005CAF", 由来: "濃い紫みの鮮やかな青色のことで、本来「瑠璃」とは仏教世界の中心にそびえ立つ須弥山で産出される宝石（仏教の七宝の一つ）で、その宝石の色にちなんだ瑠璃色も至上の色として神聖視された。" },
-
 ];
